@@ -65,7 +65,7 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxSearch_IJD);
-            this.groupBox1.Location = new System.Drawing.Point(645, 24);
+            this.groupBox1.Location = new System.Drawing.Point(625, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(231, 54);
             this.groupBox1.TabIndex = 2;
@@ -78,12 +78,13 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
             this.textBoxSearch_IJD.Name = "textBoxSearch_IJD";
             this.textBoxSearch_IJD.Size = new System.Drawing.Size(218, 22);
             this.textBoxSearch_IJD.TabIndex = 0;
+            this.textBoxSearch_IJD.TextChanged += new System.EventHandler(this.textBoxSearch_IJD_TextChanged);
             // 
             // buttonInfo_IJD
             // 
             this.buttonInfo_IJD.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonInfo_IJD.Image = ((System.Drawing.Image)(resources.GetObject("buttonInfo_IJD.Image")));
-            this.buttonInfo_IJD.Location = new System.Drawing.Point(893, 24);
+            this.buttonInfo_IJD.Location = new System.Drawing.Point(883, 24);
             this.buttonInfo_IJD.Name = "buttonInfo_IJD";
             this.buttonInfo_IJD.Size = new System.Drawing.Size(58, 54);
             this.buttonInfo_IJD.TabIndex = 1;

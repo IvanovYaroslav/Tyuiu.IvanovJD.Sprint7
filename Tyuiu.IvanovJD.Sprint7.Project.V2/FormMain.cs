@@ -87,7 +87,8 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
         private void buttonInfo_IJD_Click(object sender, EventArgs e)
         {
-
+            FormInfo formInfo = new FormInfo();
+            formInfo.ShowDialog();
         }
 
         private void buttonStat_IJD_Click(object sender, EventArgs e)
@@ -139,6 +140,29 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
                 txt.StartInfo.FileName = "notepad.exe";
                 txt.StartInfo.Arguments = path;
                 txt.Start();
+            }
+        }
+
+        private void textBoxSearch_IJD_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = textBoxSearch_IJD.Text.ToLower();
+
+            foreach (DataGridViewRow row in dataGridViewIn_IJD.Rows)
+            {
+                if (row.IsNewRow) continue; // пропускаем недобавленные строки
+
+                bool found = false;
+
+                for (int j = 0; j < dataGridViewIn_IJD.Columns.Count; j++)
+                {
+                    if (row.Cells[j].Value != null && row.Cells[j].Value.ToString().ToLower().Contains(searchValue))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                row.Visible = found;
             }
         }
     }
