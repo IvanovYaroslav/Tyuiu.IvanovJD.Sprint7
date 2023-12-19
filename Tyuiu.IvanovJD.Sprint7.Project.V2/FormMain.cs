@@ -128,7 +128,7 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
                         str = str + dataGridViewIn_IJD.Rows[i].Cells[j].Value;
                     }
                 }
-                File.AppendAllText(path, str + Environment.NewLine);
+                File.AppendAllText(path, str + Environment.NewLine,Encoding.Default);
                 str = "";
             }
 
@@ -164,6 +164,50 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
                 row.Visible = found;
             }
+        }
+
+        private void ценаПоУбываниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[6], ListSortDirection.Descending);
+        }
+
+        private void buttonSortCenaUp_IJD_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip_IJD.Show(buttonSortCenaUp_IJD, 1, buttonSortCenaUp_IJD.Height);
+        }
+
+        private void поВозрастаниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[6], ListSortDirection.Ascending);
+        }
+
+        private void aZИлиZAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[1], ListSortDirection.Ascending);
+        }
+        private void aZИлиZAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[1], ListSortDirection.Ascending);
+        }
+
+        private void поВозрастаниюToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[2], ListSortDirection.Ascending);
+        }
+
+        private void поУбываниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[2], ListSortDirection.Descending);
+        }
+
+        private void aЯToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[5], ListSortDirection.Ascending);
+        }
+
+        private void aЯИлиЯAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[5], ListSortDirection.Descending);
         }
     }
 }
