@@ -23,7 +23,7 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
         DataService ds = new DataService();
 
-        //метод чтения данных из файла
+        
         public static string[,] LoadFromFileData(string filePath)
         {
             string fileData = File.ReadAllText(filePath,Encoding.Default);
@@ -46,20 +46,20 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
         }
         private void LoadDataIntoDataGridView(string filePath)
         {
-            // загружаем данные из файла с помощью метода LoadFromFileData
+            
             string[,] dataArray = LoadFromFileData(filePath);
 
-            // очищаем DataGridView перед загрузкой новых данных
+         
             dataGridViewIn_IJD.Rows.Clear();
             dataGridViewIn_IJD.Columns.Clear();
 
-            // добавляем столбцы в DataGridView
+            
             for (int i = 0; i < dataArray.GetLength(1); i++)
             {
                 dataGridViewIn_IJD.Columns.Add("", dataArray[0, i]);
             }
 
-            // добавляем строки с данными из CSV файла
+            
             for (int i = 1; i < dataArray.GetLength(0); i++)
             {
                 List<string> rowData = new List<string>();
@@ -73,14 +73,14 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
         private void buttonOpenFile_IJD_Click(object sender, EventArgs e)
         {
-            // получаем путь к файлу с помощью диалогового окна открытия файла
+            
             OpenFileDialog openFileDialog_IJD = new OpenFileDialog();
-            openFileDialog_IJD.Filter = "csv Files|*.csv"; // фильтр для отображения только csv файлов
+            openFileDialog_IJD.Filter = "csv Files|*.csv";
             if (openFileDialog_IJD.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog_IJD.FileName;
 
-                // загружаем данные в DataGridView с помощью метода LoadDataIntoDataGridView
+               
                 LoadDataIntoDataGridView(filePath);
             }
         }
@@ -89,15 +89,17 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
         {
             FormInfo formInfo = new FormInfo();
             formInfo.ShowDialog();
+            
         }
 
         private void buttonStat_IJD_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void buttonSaveFile_IJD_Click(object sender, EventArgs e)
         {
+            
             saveFileDialog_IJD.FileName = "OutPutMagaz.csv";
             saveFileDialog_IJD.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialog_IJD.ShowDialog();
@@ -149,7 +151,7 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
             foreach (DataGridViewRow row in dataGridViewIn_IJD.Rows)
             {
-                if (row.IsNewRow) continue; // пропускаем недобавленные строки
+                if (row.IsNewRow) continue; 
 
                 bool found = false;
 
@@ -183,31 +185,85 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
         private void aZИлиZAToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[1], ListSortDirection.Ascending);
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[0], ListSortDirection.Ascending);
         }
         private void aZИлиZAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[1], ListSortDirection.Ascending);
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[0], ListSortDirection.Descending);
         }
 
         private void поВозрастаниюToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[2], ListSortDirection.Ascending);
+            for (int i = 0; i < dataGridViewIn_IJD.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dataGridViewIn_IJD.Rows.Count; j++)
+                {
+                    if (dataGridViewIn_IJD.Rows[i].Cells[1].Value != null && dataGridViewIn_IJD.Rows[j].Cells[1].Value != null)
+                    {
+                        if (Convert.ToDouble(dataGridViewIn_IJD.Rows[i].Cells[1].Value) > Convert.ToDouble(dataGridViewIn_IJD.Rows[j].Cells[1].Value))
+                        {
+
+                            for (int k = 0; k < dataGridViewIn_IJD.Columns.Count; k++)
+                            {
+                                object temp = dataGridViewIn_IJD.Rows[i].Cells[k].Value;
+                                dataGridViewIn_IJD.Rows[i].Cells[k].Value = dataGridViewIn_IJD.Rows[j].Cells[k].Value;
+                                dataGridViewIn_IJD.Rows[j].Cells[k].Value = temp;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void поУбываниюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[2], ListSortDirection.Descending);
+            for (int i = 0; i < dataGridViewIn_IJD.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dataGridViewIn_IJD.Rows.Count; j++)
+                {
+                    if (dataGridViewIn_IJD.Rows[i].Cells[1].Value != null && dataGridViewIn_IJD.Rows[j].Cells[1].Value != null)
+                    {
+                        if (Convert.ToDouble(dataGridViewIn_IJD.Rows[i].Cells[1].Value) < Convert.ToDouble(dataGridViewIn_IJD.Rows[j].Cells[1].Value))
+                        {
+
+                            for (int k = 0; k < dataGridViewIn_IJD.Columns.Count; k++)
+                            {
+                                object temp = dataGridViewIn_IJD.Rows[i].Cells[k].Value;
+                                dataGridViewIn_IJD.Rows[i].Cells[k].Value = dataGridViewIn_IJD.Rows[j].Cells[k].Value;
+                                dataGridViewIn_IJD.Rows[j].Cells[k].Value = temp;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void aЯToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[5], ListSortDirection.Ascending);
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[4], ListSortDirection.Ascending);
         }
 
         private void aЯИлиЯAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[5], ListSortDirection.Descending);
+            dataGridViewIn_IJD.Sort(dataGridViewIn_IJD.Columns[4], ListSortDirection.Descending);
+        }
+
+        private void buttonAdd_IJD_Click(object sender, EventArgs e)
+        {
+            CntextMenuStrip1_IJD.Show(buttonAdd_IJD, 1, buttonAdd_IJD.Height);
+        }
+
+        private void добавитьМагазинToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdd addDataForm = new FormAdd();
+            if (addDataForm.ShowDialog() == DialogResult.OK)
+            {
+                // Получите данные из формы ввода данных
+                string[] rowData = addDataForm.GetRowData();
+
+                // Добавьте новую строку в DataGridView
+                dataGridViewIn_IJD.Rows.Add(rowData);
+            }
         }
     }
 }

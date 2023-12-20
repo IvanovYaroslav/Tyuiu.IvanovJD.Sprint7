@@ -7,23 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Components;
-using MetroFramework.Forms;
-using System.IO;
-using Tyuiu.IvanovJD.Sprint7.Project.V2.Lib;
 
 namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 {
-    public partial class FormInfo : MetroForm
+    public partial class Form1 : Form
     {
-        public FormInfo()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void buttonOKClose_IJD_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

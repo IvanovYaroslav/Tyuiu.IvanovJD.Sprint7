@@ -117,16 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Разработчик: Иванов Я. Д.
-группа ПКТБ-23-2
-
-Программа разработана в рамках изучения языка C#
-
-Тюменский индустриальный университет (с) 2023
-Высшая школа цифровых технологий (с) 2023
-
-Внутренее имя: Tyuiu.IvanovSI.Sprint7.Project.V2
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonAddText_IJD.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGtSURBVFhHxZXbSgJhFIW96LZLfYleIuidvNaZiYgw
+        NDXF7GAFRVB0okCKDiqGVFREUFAQVFfVK+z+NfnDKNucaLPb8OG4Zq09a7zwjxDRv8KKmrCiJqyoCStq
+        woqasKImrKgJK2rCikHMDCQSiT3Pc8l1wwEvMshiAbfXwopBzAxi6fvH569ABlmJAtFkMukvHRtP0UQq
+        bcj0IO174EUGWYkCMSx7eX2jyXSWpnIFyuaLPnbsd9yDB952gZhYgcenZ/8h08UZQ9n/tBPU4IFXtIDj
+        OHR3/0C5Qsl/QMa8aSZbMLe/B9fQcA8eeJERLXB9c0v5wFv3GnjgFS9wcXlFpfKCkX4eeOAVLeCaZWet
+        c6osrdBcZZlm5xepbLCDa2i4Bw+8yMgVcB1qNFu0urbegZ1uHV5kRAvU6k3a2NzpwE63Dq9wAZeOTuu0
+        tbtP232AB972P6FMgVHPo5Nak6qHx1Q96IPxwIuMVIFoPB5vYCHeKgzwIoOsRAEcKEOGYcNISOBFRuQw
+        wpGKRXgb/KRhgBcZkeP4z8PttbCiJqyoCStqwoqasKImrKgHRb4ArIb1FBycbxUAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="metroToolTipadd_IJD.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
