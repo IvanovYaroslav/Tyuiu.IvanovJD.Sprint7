@@ -94,7 +94,8 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 
         private void buttonStat_IJD_Click(object sender, EventArgs e)
         {
-            
+            FormStat formStat = new FormStat();
+            formStat.ShowDialog();
         }
 
         private void buttonSaveFile_IJD_Click(object sender, EventArgs e)
