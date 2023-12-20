@@ -27,7 +27,7 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
             int columns = lines[0].Split(';').Length;
             string[,] arrayValues = new string[rows, columns];
 
-            for (int r = 0; r < rows; r++)
+            for (int r = 0; r < rows; r++) 
             {
                 string[] line_r = lines[r].Split(';');
                 for (int c = 0; c < columns; c++)
