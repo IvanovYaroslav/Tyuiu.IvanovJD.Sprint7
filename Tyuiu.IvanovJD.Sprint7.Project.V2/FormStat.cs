@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tyuiu.IvanovJD.Sprint7.Project.V2
 {
-    public partial class Form1 : Form
+    public partial class FormStat : Form
     {
-        public Form1()
+        public FormStat()
         {
             InitializeComponent();
         }

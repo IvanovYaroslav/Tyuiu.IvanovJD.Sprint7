@@ -265,5 +265,11 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
                 dataGridViewIn_IJD.Rows.Add(rowData);
             }
         }
+
+        private void buttonRukovodstvo_IJD_Click(object sender, EventArgs e)
+        {
+            FormRuk formRuk = new FormRuk();
+            formRuk.ShowDialog();
+        }
     }
 }

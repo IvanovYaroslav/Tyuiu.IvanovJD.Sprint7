@@ -124,7 +124,7 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
             this.buttonInfo_IJD.Name = "buttonInfo_IJD";
             this.buttonInfo_IJD.Size = new System.Drawing.Size(58, 54);
             this.buttonInfo_IJD.TabIndex = 1;
-            this.metroToolTip1_IJD.SetToolTip(this.buttonInfo_IJD, "Кратное руководство о программе");
+            this.metroToolTip1_IJD.SetToolTip(this.buttonInfo_IJD, "О программе");
             this.buttonInfo_IJD.UseVisualStyleBackColor = false;
             this.buttonInfo_IJD.Click += new System.EventHandler(this.buttonInfo_IJD_Click);
             // 
@@ -337,7 +337,9 @@ namespace Tyuiu.IvanovJD.Sprint7.Project.V2
             this.buttonRukovodstvo_IJD.Name = "buttonRukovodstvo_IJD";
             this.buttonRukovodstvo_IJD.Size = new System.Drawing.Size(67, 54);
             this.buttonRukovodstvo_IJD.TabIndex = 4;
+            this.metroToolTip1_IJD.SetToolTip(this.buttonRukovodstvo_IJD, "Кратное руководство о программе");
             this.buttonRukovodstvo_IJD.UseVisualStyleBackColor = false;
+            this.buttonRukovodstvo_IJD.Click += new System.EventHandler(this.buttonRukovodstvo_IJD_Click);
             // 
             // FormMain
             // 
